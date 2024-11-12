@@ -1,0 +1,6 @@
+Nomes:
+Luiz Felipe Campos da Silva RM555591
+Luiz Sadao Kamada RM557652
+Alice Teixeira Caldeira rm556293
+
+Esse arquivo json expira em 90 dias (tempo do free trial da GC) ou enquanto os créditos durarem então talvez seja preciso realizar o processo para pegar das próprias credenciais
