@@ -69,7 +69,6 @@ if response.status_code == 200:
     else:
         prediction = predictions[0]
 
-        # Tentar obter os valores de displayNames e confidences com segurança
         display_names = prediction.get('displayNames', [])
         confidences = prediction.get('confidences', [])
 
@@ -105,7 +104,6 @@ if response.status_code == 200:
                     "Hyundai Creta": {"Parabrisas": 700, "Compartimento do motor": 1650, "Lateral": 1450, "Capô": 1300, "Parachoque": 870},
                 }
                 
-                # Dicionário para converter displayNames para português
                 partes_em_portugues = {
                     "windshield": "Parabrisas",
                     "engine_compartment": "Compartimento do motor",
@@ -114,17 +112,15 @@ if response.status_code == 200:
                     "bumper": "Parachoque"
                 }
 
-                # Traduzir displayName para português
                 parte_danificada = partes_em_portugues.get(display_name, display_name)
 
-                # Imprimir tabela de preços de forma bonita
+                # Imprimir tabela de preços
                 print("\nTabela de Preços de Reparo:")
                 print(f"{'Modelo':<30}{'Parte':<30}{'Preço (R$)':<15}")
                 print("="*75)
                 for carro, precos in carros.items():
                     print(f"{carro:<30}{parte_danificada:<30}{precos.get(parte_danificada, 'N/A'):<15}")
 
-                # Permitir escolha de carro
                 carro_escolhido = input("\nEscolha o carro: ")
                 if carro_escolhido in carros:
                     preco_reparo = carros[carro_escolhido].get(parte_danificada)
