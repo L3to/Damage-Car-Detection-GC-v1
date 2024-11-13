@@ -1,3 +1,4 @@
+#lembre-se de setar a variável de context do google auth descrita no jupyter notebook
 import json
 import base64
 from google.auth import default
